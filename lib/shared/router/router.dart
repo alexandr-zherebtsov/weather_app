@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:weather_app/features/about_app_screen/about_app_screen.dart';
-import 'package:weather_app/features/main_screen/main_screen.dart';
-import 'package:weather_app/features/splash_screen/splash_screen.dart';
+import 'package:weather_app/features/about_app/about_app_screen.dart';
+import 'package:weather_app/features/main/main_screen.dart';
+import 'package:weather_app/features/splash/splash_screen.dart';
 import 'package:weather_app/shared/bindings/about_app_binding.dart';
 import 'package:weather_app/shared/bindings/main_binding.dart';
 import 'package:weather_app/shared/bindings/splash_binding.dart';

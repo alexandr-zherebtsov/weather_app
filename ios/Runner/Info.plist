@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<string>11.0</string>
 	<key>CFBundleName</key>
 	<string>weather_app</string>
 	<key>CFBundlePackageType</key>
@@ -41,9 +41,13 @@
       <string>https</string>
       <string>http</string>
     </array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs access to location when open.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>This app needs access to location when in the background.</string>
+	    <key>NSLocationWhenInUseUsageDescription</key>
+        <string>Need location when in use</string>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>Always and when in use!</string>
+        <key>NSLocationUsageDescription</key>
+        <string>Older devices need location.</string>
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>Can I have location always?</string>
 </dict>
 </plist>

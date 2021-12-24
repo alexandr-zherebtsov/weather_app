@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:weather_app/data/sources/local/preference.dart';
 import 'package:weather_app/domain/models/location_model.dart';
 import 'package:weather_app/domain/responses/weather_response.dart';
+import 'package:weather_app/shared/constants/app_values.dart';
 import 'package:weather_app/shared/core/localization/string_keys.dart';
 import 'package:weather_app/shared/design_system/widgets.dart';
 import 'package:weather_app/shared/router/route_paths.dart';
@@ -61,18 +63,18 @@ class MainController extends GetxController {
   }
 
   Future<void> getCurrentLocation() async {
-    Map<String, dynamic>? res = await _pref.getCurrentLocation();
+    String? res = await _pref.getCurrentLocation();
     if (res != null) {
-      location = LocationModel.fromJson(res);
+      location = LocationModel.fromJson(jsonDecode(res));
     } else {
-      screenError = true;
+      location = AppValues.defaultLocation;
     }
   }
 
   Future<void> getLastWeather() async {
-    Map<String, dynamic>? res = await _pref.getLastWeather();
+    String? res = await _pref.getLastWeather();
     if (res != null) {
-      weather = WeatherResponse.fromJson(res);
+      weather = WeatherResponse.fromJson(jsonDecode(res));
     } else {
       screenError = true;
     }

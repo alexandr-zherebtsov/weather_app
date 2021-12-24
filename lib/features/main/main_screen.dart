@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:weather_app/features/main_screen/widgets/day_hourly_weather_view.dart';
-import 'package:weather_app/features/main_screen/main_controller.dart';
-import 'package:weather_app/features/main_screen/widgets/location_widget.dart';
-import 'package:weather_app/features/main_screen/widgets/main_widgets.dart';
-import 'package:weather_app/features/main_screen/widgets/temp_widget.dart';
-import 'package:weather_app/features/main_screen/widgets/time_widget.dart';
+import 'package:weather_app/features/main/main_controller.dart';
+import 'package:weather_app/features/main/widgets/day_hourly_view.dart';
+import 'package:weather_app/features/main/widgets/location_widget.dart';
+import 'package:weather_app/features/main/widgets/main_widgets.dart';
+import 'package:weather_app/features/main/widgets/temp_widget.dart';
+import 'package:weather_app/features/main/widgets/time_widget.dart';
 import 'package:weather_app/shared/core/localization/string_keys.dart';
 import 'package:weather_app/shared/design_system/widgets.dart';
 import 'package:weather_app/shared/utils/utils.dart';
@@ -52,7 +52,7 @@ class MainScreen extends StatelessWidget {
                   description: controller.weather?.current?.weather?[0].description,
                   icon: controller.weather?.current?.weather?[0].icon,
                 ),
-                buildDayHourlyWeatherView(
+                buildDayOrHourlyView(
                   viewIndex: controller.viewIndex,
                   weatherHourly: controller.weather?.hourly?? [],
                   weatherByDay: controller.weather?.daily?? [],

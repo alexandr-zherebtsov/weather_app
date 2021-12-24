@@ -11,7 +11,7 @@ class AboutAppController extends GetxController {
   late PackageInfo packageInfo;
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     getVersion();
   }
@@ -19,7 +19,7 @@ class AboutAppController extends GetxController {
   void getVersion() async {
     try {
       packageInfo = await PackageInfo.fromPlatform();
-      version.value = AppStringsKeys.version.tr + ' ' + packageInfo.version;
+      version(AppStringsKeys.version.tr + ' ' + packageInfo.version);
     } catch (e) {
       log(e.toString());
     }

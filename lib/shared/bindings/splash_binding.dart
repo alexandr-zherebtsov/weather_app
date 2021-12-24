@@ -3,7 +3,7 @@ import 'package:weather_app/data/repositories/weather/weather_repository.dart';
 import 'package:weather_app/data/repositories/weather/weather_repository_impl.dart';
 import 'package:weather_app/data/sources/remote/remote_data_source.dart';
 import 'package:weather_app/data/sources/remote/remote_data_source_impl.dart';
-import 'package:weather_app/features/splash_screen/splash_controller.dart';
+import 'package:weather_app/features/splash/splash_controller.dart';
 
 class SplashBinding extends Bindings {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/features/main_screen/widgets/main_widgets.dart';
+import 'package:weather_app/features/main/widgets/main_widgets.dart';
 
 Row buildTempWidget({
   required double? temp,

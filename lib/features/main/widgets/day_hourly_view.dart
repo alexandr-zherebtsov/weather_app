@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/domain/responses/weather_response.dart';
-import 'package:weather_app/features/main_screen/widgets/main_widgets.dart';
+import 'package:weather_app/features/main/widgets/main_widgets.dart';
 import 'package:weather_app/shared/core/localization/string_keys.dart';
 import 'package:weather_app/shared/design_system/colors.dart';
 import 'package:weather_app/shared/utils/utils.dart';
 
-Widget buildDayHourlyWeatherView({
+Widget buildDayOrHourlyView({
   required int viewIndex,
   required List<Hourly> weatherHourly,
   required List<Daily> weatherByDay,

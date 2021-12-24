@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -35,8 +36,7 @@ class SplashController extends GetxController {
   Future<void> getCurrentLocation() async {
     try {
       // get location permission
-      await Permission.location.request();
-      if (await Permission.location.isGranted) {
+      if (await Permission.location.request().isGranted) {
         // get current position
         final Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high,
@@ -55,7 +55,7 @@ class SplashController extends GetxController {
             latitude: position.latitude,
             longitude: position.longitude,
           );
-          await _pref.setCurrentLocation(location.toJson());
+          await _pref.setCurrentLocation(jsonEncode(location.toJson()));
         }
       }
     } catch (e) {
@@ -66,23 +66,24 @@ class SplashController extends GetxController {
   Future<void> getWeather() async {
     try {
       // get current location from pref
-      final Map<String, dynamic>? locationJson = await _pref.getCurrentLocation();
-      if (locationJson != null) {
-        final LocationModel location = LocationModel.fromJson(locationJson);
-
-        // get weather
-        final WeatherRequest data = WeatherRequest(
-          lat: location.latitude,
-          lon: location.longitude,
-          lang: getLangCode(),
-          appid: AppValues.apiKey,
-        );
-
-        final WeatherResponse? weather = await _weatherRepository.getWeather(data);
-        if (weather != null) {
-          // set last weather
-          await _pref.setLastWeather(weather.toJson());
-        }
+      final String? locationPref = await _pref.getCurrentLocation();
+      final LocationModel location;
+      if (locationPref == null) {
+        location = AppValues.defaultLocation;
+      } else {
+        location = LocationModel.fromJson(jsonDecode(locationPref));
+      }
+      // get weather
+      final WeatherRequest data = WeatherRequest(
+        lat: location.latitude,
+        lon: location.longitude,
+        lang: getLangCode(),
+        appid: AppValues.apiKey,
+      );
+      final WeatherResponse? weather = await _weatherRepository.getWeather(data);
+      if (weather != null) {
+        // set last weather
+        await _pref.setLastWeather(jsonEncode(weather.toJson()));
       }
     } catch (e) {
       log(e.toString());

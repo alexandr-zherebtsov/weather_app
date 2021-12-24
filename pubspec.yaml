@@ -10,20 +10,25 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # UI
-  flutter_svg: ^1.0.0
+  # ui
   cupertino_icons: ^1.0.2
 
-  # Core
+  # state manager, di, navigation, localization
   get: ^4.6.1
+
+  # local storage
   hive: ^2.0.5
   hive_flutter: ^1.1.0
+
+  # http
   dio: ^4.0.4
   pretty_dio_logger: ^1.1.1
 
-  # Services
+  # location
   geolocator: ^8.0.1
   geocoding: ^2.0.1
+
+  # utils
   permission_handler: ^8.3.0
   package_info_plus: ^1.3.0
   url_launcher: ^6.0.17
@@ -47,4 +52,3 @@ flutter:
   assets:
     - assets/
     - assets/png/
-    - assets/svg/

@@ -9,11 +9,11 @@ class Preferences {
 
   Future<void> openBox() async => _box = await Hive.openBox<dynamic>(_preferencesBox);
 
-  Future<void> setCurrentLocation(Map<String, dynamic>? e) async => await _setValue(_prefCurrentLocation, e);
-  Future<Map<String, dynamic>?> getCurrentLocation() async => await _getValue(_prefCurrentLocation);
+  Future<void> setCurrentLocation(String? e) async => await _setValue(_prefCurrentLocation, e);
+  Future<String?> getCurrentLocation() async => await _getValue(_prefCurrentLocation);
 
-  Future<void> setLastWeather(Map<String, dynamic>? e) async => await _setValue(_prefLastWeather, e);
-  Future<Map<String, dynamic>?> getLastWeather() async => await _getValue(_prefLastWeather);
+  Future<void> setLastWeather(String? e) async => await _setValue(_prefLastWeather, e);
+  Future<String?> getLastWeather() async => await _getValue(_prefLastWeather);
 
   Future<T> _getValue<T>(dynamic key, {T? defaultValue}) async => await _box!.get(key, defaultValue: defaultValue) as T;
 

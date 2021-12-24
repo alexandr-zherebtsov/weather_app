@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:weather_app/features/main_screen/main_controller.dart';
+import 'package:weather_app/features/main/main_controller.dart';
 
 class MainBinding extends Bindings {
   @override

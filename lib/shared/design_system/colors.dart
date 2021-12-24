@@ -11,17 +11,16 @@ class AppColors {
 
   static const MaterialColor green = MaterialColor(0xFF3AB472, greenMaterial);
 
-  static const Map<int, Color> greenMaterial = {
-    50:Color.fromRGBO(58, 180, 114, .1),
-    100:Color.fromRGBO(58, 180, 114, .2),
-    200:Color.fromRGBO(58, 180, 114, .3),
-    300:Color.fromRGBO(58, 180, 114, .4),
-    400:Color.fromRGBO(58, 180, 114, .5),
-    500:Color.fromRGBO(58, 180, 114, .6),
-    600:Color.fromRGBO(58, 180, 114, .7),
-    700:Color.fromRGBO(58, 180, 114, .8),
-    800:Color.fromRGBO(58, 180, 114, .9),
-    900:Color.fromRGBO(58, 180, 114, 1),
+  static const Map<int, Color> greenMaterial = <int, Color>{
+    50: Color.fromRGBO(58, 180, 114, .1),
+    100: Color.fromRGBO(58, 180, 114, .2),
+    200: Color.fromRGBO(58, 180, 114, .3),
+    300: Color.fromRGBO(58, 180, 114, .4),
+    400: Color.fromRGBO(58, 180, 114, .5),
+    500: Color.fromRGBO(58, 180, 114, .6),
+    600: Color.fromRGBO(58, 180, 114, .7),
+    700: Color.fromRGBO(58, 180, 114, .8),
+    800: Color.fromRGBO(58, 180, 114, .9),
+    900: Color.fromRGBO(58, 180, 114, 1),
   };
-
 }
